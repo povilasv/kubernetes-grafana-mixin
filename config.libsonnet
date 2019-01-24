@@ -5,6 +5,7 @@
     kubeSchedulerSelector: 'job="kube-scheduler"',
     kubeControllerManagerSelector: 'job="kube-controller-manager"',
     kubeApiserverSelector: 'job="kube-apiserver"',
+    kubeProxySelector: 'job="kube-proxy"',
     podLabel: 'pod',
     namespaceSelector: null,
     prefixedNamespaceSelector: if self.namespaceSelector != null then self.namespaceSelector + ',' else '',
