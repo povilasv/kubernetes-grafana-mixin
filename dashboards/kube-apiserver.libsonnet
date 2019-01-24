@@ -12,6 +12,15 @@ local gauge = promgrafonnet.gauge;
 {
   grafanaDashboards+:: {
     'kube-apiserver.json':
+      local upCount =
+        singlestat.new(
+          'Up',
+          datasource='$datasource',
+          span=2,
+          valueName='min',
+        )
+        .addTarget(prometheus.target('sum(up{%(kubeApiserverSelector)s})' % $._config));
+
       local rpcRate =
         graphPanel.new(
           'RPC Rate',
@@ -23,15 +32,6 @@ local gauge = promgrafonnet.gauge;
         .addTarget(prometheus.target('sum(rate(apiserver_request_count{%(kubeApiserverSelector)s, instance=~"$instance",code=~"3.."}[5m]))' % $._config, legendFormat='3xx'))
         .addTarget(prometheus.target('sum(rate(apiserver_request_count{%(kubeApiserverSelector)s, instance=~"$instance",code=~"4.."}[5m]))' % $._config, legendFormat='4xx'))
         .addTarget(prometheus.target('sum(rate(apiserver_request_count{%(kubeApiserverSelector)s, instance=~"$instance",code=~"5.."}[5m]))' % $._config, legendFormat='5xx'));
-
-      local upCount =
-        singlestat.new(
-          'Up',
-          datasource='$datasource',
-          span=2,
-          valueName='min',
-        )
-        .addTarget(prometheus.target('sum(up{%(kubeApiserverSelector)s})' % $._config));
 
       local requestDuration =
         graphPanel.new(
