@@ -1,14 +1,11 @@
 {
   _config+:: {
     // Selectors are inserted between {} in Prometheus queries.
-    kubeletSelector: 'job="kubelet"',
+    kubeletSelector: 'job="kubernetes-nodes"',
     kubeSchedulerSelector: 'job="kube-scheduler"',
     kubeControllerManagerSelector: 'job="kube-controller-manager"',
     kubeApiserverSelector: 'job="kube-apiserver"',
     kubeProxySelector: 'job="kube-proxy"',
-    podLabel: 'pod',
-    namespaceSelector: null,
-    prefixedNamespaceSelector: if self.namespaceSelector != null then self.namespaceSelector + ',' else '',
 
     // Grafana dashboard IDs are necessary for stable links for dashboards
     grafanaDashboardIDs: {
