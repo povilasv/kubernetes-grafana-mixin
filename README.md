@@ -13,7 +13,7 @@ To do this, use [jsonnet-bundler](https://github.com/jsonnet-bundler/jsonnet-bun
 
 1) Recommended. Generate the grafana .json files and deploy them yourself.
 
-2) If you want to just try them out the generated `.json` files are commited in [dashboards_out](https://github.com/povilasv/kubernetes-grafana-mixin/tree/master/dashboards_out) directory, just download them and import them via [Grafana](https://grafana.com/docs/reference/export_import/#importing-a-dashboard). But it's not recommended, because you won't receive the updates.
+2) If you want to just try them out the generated `.json` files are commited in [dashboards_out](https://github.com/povilasv/kubernetes-grafana-mixin/tree/master/dashboards_out) directory, just download them and import them via [Grafana](https://grafana.com/docs/reference/export_import/#importing-a-dashboard). But it's not recommended, because you won't receive updates.
 
 ## Generate config files
 
