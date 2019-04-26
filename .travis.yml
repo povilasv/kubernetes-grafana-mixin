@@ -1,0 +1,6 @@
+language: generic
+dist: xenial
+install: make setup_all
+before_script:
+  - export PATH=$PATH:$PWD
+script: make
