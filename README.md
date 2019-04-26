@@ -30,7 +30,10 @@ $ brew install jsonnet
 
 Linux:
 ```
-sudo snap install jsonnet
+git clone https://github.com/google/jsonnet.git jsonnet_git
+cd jsonnet_git
+make
+sudo mv jsonnet /usr/local/bin/
 ```
 
 Then, grab the mixin and its dependencies:
