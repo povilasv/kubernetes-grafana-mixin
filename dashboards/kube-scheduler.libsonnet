@@ -103,7 +103,7 @@ local singlestat = grafana.singlestat;
       dashboard.new(
         'Kube Scheduler',
         time_from='now-1h',
-        uid=($._config.grafanaDashboardIDs['kube-controller-manager.json']),
+        uid=($._config.grafanaDashboardIDs['kube-scheduler.json']),
       ).addTemplate(
         {
           current: {
