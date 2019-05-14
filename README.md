@@ -2,9 +2,7 @@
 
 A set of Grafana dashboards for Kubernetes Administrators.
 
-Currently works on 1.12 clusters. Untested on `1.13` and `1.14`.
-
-I plan to add git branches for `1.13` and `1.14` in future :)
+Currently works on 1.12 & 1.13 clusters. Untested on `1.14`.
 
 ## How to use
 
